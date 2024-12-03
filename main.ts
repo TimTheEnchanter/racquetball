@@ -127,9 +127,13 @@ scene.setBackgroundImage(img`
 let lastHitBall = 0
 if (mp.isConnected(mp.playerSelector(mp.PlayerNumber.One))) {
     mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`paddle1`, SpriteKind.Player))
-    mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One))
+    mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One), 100, 0)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).setStayInScreen(true)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).y = 110
 }
 if (mp.isConnected(mp.playerSelector(mp.PlayerNumber.Two))) {
     mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two), sprites.create(assets.image`paddle2`, SpriteKind.Player))
-    mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.Two))
+    mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.Two), 100, 0)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).setStayInScreen(true)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).y = 110
 }
