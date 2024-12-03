@@ -1,3 +1,6 @@
+namespace SpriteKind {
+    export const Player2 = SpriteKind.create()
+}
 game.splash("Racquetball", "By James Parrott")
 scene.setBackgroundImage(img`
     3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333
@@ -121,4 +124,12 @@ scene.setBackgroundImage(img`
     1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
     1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
     `)
-let lastHitBall = 1
+let lastHitBall = 0
+if (mp.isConnected(mp.playerSelector(mp.PlayerNumber.One))) {
+    mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`paddle1`, SpriteKind.Player))
+    mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One))
+}
+if (mp.isConnected(mp.playerSelector(mp.PlayerNumber.Two))) {
+    mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two), sprites.create(assets.image`paddle2`, SpriteKind.Player))
+    mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.Two))
+}

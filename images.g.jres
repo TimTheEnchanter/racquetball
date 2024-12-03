@@ -1,0 +1,17 @@
+{
+    "image1": {
+        "data": "hwQQABAAAAAAAAAgAgAAAAAAADIjAAAAAAAgEzECAAAAACATMQIAAAAAIBMxAgAAAAAgEzECAAAAACATMQIAAAAAIBMxAgAAAAAgEzECAAAAACATMQIAAAAAIBMxAgAAAAAgEzECAAAAACATMQIAAAAAIBMxAgAAAAAAMiMAAAAAAAAgAgAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "paddle1"
+    },
+    "image2": {
+        "data": "hwQQABAAAAAAAACACAAAAAAAAJiJAAAAAACAGZEIAAAAAIAZkQgAAAAAgBmRCAAAAACAGZEIAAAAAIAZkQgAAAAAgBmRCAAAAACAGZEIAAAAAIAZkQgAAAAAgBmRCAAAAACAGZEIAAAAAIAZkQgAAAAAgBmRCAAAAAAAmIkAAAAAAACACAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "paddle2"
+    },
+    "*": {
+        "mimeType": "image/x-mkcd-f4",
+        "dataEncoding": "base64",
+        "namespace": "myImages"
+    }
+}
