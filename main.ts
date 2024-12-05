@@ -1,6 +1,10 @@
 namespace SpriteKind {
     export const Player2 = SpriteKind.create()
 }
+mp.onButtonEvent(mp.MultiplayerButton.A, ControllerButtonEvent.Pressed, function (player2) {
+    ball.setVelocity(randint(-50, 50), -20)
+})
+let ball: Sprite = null
 game.splash("Racquetball", "By James Parrott")
 scene.setBackgroundImage(img`
     3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333
@@ -149,7 +153,7 @@ if (mp.isConnected(mp.playerSelector(mp.PlayerNumber.Four))) {
     mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Four)).setStayInScreen(true)
     mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Four)).y = 110
 }
-let ball = sprites.create(img`
+ball = sprites.create(img`
     . . . . . b b b b b b . . . . . 
     . . . b b 9 9 9 9 9 9 b b . . . 
     . . b b 9 9 9 9 9 9 9 9 b b . . 
