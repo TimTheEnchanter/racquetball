@@ -3,18 +3,22 @@ namespace SpriteKind {
 }
 sprites.onOverlap(mp.getPlayerProperty(mp.playerSelector(mp.PlayerNumber.One), mp.PlayerProperty.Index), SpriteKind.Projectile, function (sprite, otherSprite) {
     lastHitBall = 1
+    mp.changePlayerStateBy(mp.playerSelector(mp.PlayerNumber.One), MultiplayerState.score, 1)
 })
 mp.onButtonEvent(mp.MultiplayerButton.A, ControllerButtonEvent.Pressed, function (player2) {
     ball.setVelocity(randint(-50, 50), -20)
 })
 sprites.onOverlap(mp.getPlayerProperty(mp.playerSelector(mp.PlayerNumber.Three), mp.PlayerProperty.Index), SpriteKind.Projectile, function (sprite, otherSprite) {
     lastHitBall = 3
+    mp.changePlayerStateBy(mp.playerSelector(mp.PlayerNumber.Three), MultiplayerState.score, 1)
 })
 sprites.onOverlap(mp.getPlayerProperty(mp.playerSelector(mp.PlayerNumber.Four), mp.PlayerProperty.Index), SpriteKind.Projectile, function (sprite, otherSprite) {
     lastHitBall = 4
+    mp.changePlayerStateBy(mp.playerSelector(mp.PlayerNumber.Four), MultiplayerState.score, 1)
 })
 sprites.onOverlap(mp.getPlayerProperty(mp.playerSelector(mp.PlayerNumber.Two), mp.PlayerProperty.Index), SpriteKind.Projectile, function (sprite, otherSprite) {
     lastHitBall = 2
+    mp.changePlayerStateBy(mp.playerSelector(mp.PlayerNumber.Two), MultiplayerState.score, 1)
 })
 let ball: Sprite = null
 let lastHitBall = 0
