@@ -1,10 +1,23 @@
 namespace SpriteKind {
     export const Player2 = SpriteKind.create()
 }
+sprites.onOverlap(mp.getPlayerProperty(mp.playerSelector(mp.PlayerNumber.One), mp.PlayerProperty.Index), SpriteKind.Projectile, function (sprite, otherSprite) {
+    lastHitBall = 1
+})
 mp.onButtonEvent(mp.MultiplayerButton.A, ControllerButtonEvent.Pressed, function (player2) {
     ball.setVelocity(randint(-50, 50), -20)
 })
+sprites.onOverlap(mp.getPlayerProperty(mp.playerSelector(mp.PlayerNumber.Three), mp.PlayerProperty.Index), SpriteKind.Projectile, function (sprite, otherSprite) {
+    lastHitBall = 3
+})
+sprites.onOverlap(mp.getPlayerProperty(mp.playerSelector(mp.PlayerNumber.Four), mp.PlayerProperty.Index), SpriteKind.Projectile, function (sprite, otherSprite) {
+    lastHitBall = 4
+})
+sprites.onOverlap(mp.getPlayerProperty(mp.playerSelector(mp.PlayerNumber.Two), mp.PlayerProperty.Index), SpriteKind.Projectile, function (sprite, otherSprite) {
+    lastHitBall = 2
+})
 let ball: Sprite = null
+let lastHitBall = 0
 game.splash("Racquetball", "By James Parrott")
 scene.setBackgroundImage(img`
     3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333
@@ -128,7 +141,7 @@ scene.setBackgroundImage(img`
     1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
     1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
     `)
-let lastHitBall = 0
+lastHitBall = 0
 if (mp.isConnected(mp.playerSelector(mp.PlayerNumber.One))) {
     mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`paddle1`, SpriteKind.Player))
     mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One), 100, 0)
